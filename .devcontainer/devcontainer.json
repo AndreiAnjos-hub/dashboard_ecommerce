@@ -1,26 +1,22 @@
 {
   "name": "Meu Ambiente Customizado",
-  "image": "mcr.microsoft.com/devcontainers/python:3", // Define a imagem base
+  "image": "mcr.microsoft.com/devcontainers/python:3",
   
-  // Instala extensões automaticamente
   "customizations": {
     "vscode": {
+      "settings": {
+        "editor.bracketPairColorization.enabled": true,
+        "editor.guides.bracketPairGuides": "active"
+      },
+
       "extensions": [
         "ms-python.python",
         "ritwickdey.LiveServer",
         "yy0931.vscode-sqlite3-editor",
-        "bracket-pair-colorizer-2",
         "GitHub.copilot"
       ]
     }
   },
 
-  // Instala bibliotecas de software (ex: bibliotecas Python)
-  "postCreateCommand": "pip install -r requirements.txt",
-  "postCreateCommand": "pip install rich",
-  "postCreateCommand": "pip install os",
-  "postCreateCommand": "pip install streamlit",
-  "postCreateCommand": "pip install pandas",
-  "postCreateCommand": "pip install plotly",
-  "postCreateCommand": "pip install -r requirements.txt"
+  "postCreateCommand": "pip install rich streamlit pandas plotly os && pip install -r requirements.txt"
 }
